@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Artikel Streak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Artikel Streak.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="brand">
+          <span class="flag"><i></i><i></i><i></i></span>Artikel Streak
+        </div>
+        <div class="best">
+          Best flags<b id="best">0</b
+          ><button id="mute" class="mute" aria-label="Toggle sound">🔊</button>
+        </div>
+      </header>
+      <main>
+        <section id="menu" class="screen on">
+          <h1>
+            <span class="c-der">der</span>, <span class="c-die">die</span
+            ><br />oder <span class="c-das">das</span>?
+          </h1>
+          <p class="lead">
+            Pick a mode. 3 lives, no timer. Build the longest streak.
+          </p>
+          <div class="chips">
+            <span class="chip der">der</span><span class="chip die">die</span
+            ><span class="chip das">das</span>
+          </div>
+          <div class="rules">
+            <div><b>3 lives</b><span>A wrong answer costs one.</span></div>
+            <div>
+              <b>Flaggen</b
+              ><span
+                >Every 3 correct answers fill a flag. Collect as many as you
+                can.</span
+              >
+            </div>
+            <div>
+              <b>No timer</b><span>Take your time. Protect your streak.</span>
+            </div>
+          </div>
+          <div class="modes" role="radiogroup" aria-label="Game mode">
+            <button
+              class="mode on"
+              data-m="art"
+              role="radio"
+              aria-checked="true"
+            >
+              <b>Artikel</b><span>der, die, das<br />165 nouns</span>
+            </button>
+            <button class="mode" data-m="a1" role="radio" aria-checked="false">
+              <b>Level A1</b
+              ><span>Dialogs, picture quiz, grammar<br />100+ questions</span>
+            </button>
+          </div>
+          <button class="cta" id="start">Start playing</button>
+        </section>
+
+        <section id="play" class="screen">
+          <div class="seg" role="group" aria-label="Mode">
+            <button data-m="art" class="on">Artikel</button
+            ><button data-m="a1">Level A1</button>
+          </div>
+          <div class="hud">
+            <div class="lives" id="lives" aria-label="Lives">
+              <i></i><i></i><i></i>
+            </div>
+            <div class="streak"><b id="streak">0</b><span>in a row</span></div>
+          </div>
+
+          <div class="flagrow">
+            <div class="flagbox" id="flag" aria-hidden="true">
+              <div class="fs"><i></i></div>
+              <div class="fs"><i></i></div>
+              <div class="fs"><i></i></div>
+            </div>
+            <div class="fcount" title="Flaggen gesammelt">
+              ×<b id="flags">0</b>
+            </div>
+          </div>
+          <div class="card" id="card">
+            <div class="pic" id="pic" aria-hidden="true"></div>
+            <div class="word">
+              <span class="a" id="art"></span><span id="word"></span>
+            </div>
+            <div class="ar" id="ar" lang="ar" dir="rtl"></div>
+            <button class="hintbtn" id="hint" hidden>
+              💡 Hinweis auf Arabisch
+            </button>
+            <div class="verdict" id="verdict" aria-live="assertive"></div>
+            <div class="fb" id="fb" aria-live="polite"></div>
+          </div>
+          <div class="opts" id="opts"></div>
+          <div class="btns" id="btns">
+            <button class="btn" data-a="der">der<small>← or 1</small></button>
+            <button class="btn" data-a="die">die<small>↓ or 2</small></button>
+            <button class="btn" data-a="das">das<small>→ or 3</small></button>
+          </div>
+        </section>
+
+        <section id="over" class="screen">
+          <h1 id="ovTitle">Game over</h1>
+          <span class="rec" id="rec" hidden>New record</span>
+          <div class="stats">
+            <div class="stat">
+              <b id="sFlags">0</b><span>Flaggen gesammelt</span>
+            </div>
+            <div class="stat">
+              <b id="sStreak">0</b><span>Best streak</span>
+            </div>
+            <div class="stat"><b id="sRight">0</b><span>Correct</span></div>
+            <div class="stat"><b id="sAcc">0%</b><span>Accuracy</span></div>
+          </div>
+          <p class="miss" id="miss"></p>
+          <button class="cta" id="again">Play again</button>
+          <button class="cta ghost" id="menuBtn">Change mode</button>
+        </section>
+      </main>
+    </div>
+    <script src="Artikel Streak.js"></script>
+  </body>
+</html>
